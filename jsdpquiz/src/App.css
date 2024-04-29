@@ -1,0 +1,43 @@
+body {
+  background-color: gray;
+}
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question {
+  font-size: 20px;
+  text-align: center;
+}
+.answers {
+  text-align: center;
+  list-style: none;
+  font-size: 30px;
+  line-height: 100px;
+  background-color: black;
+  color: white;
+  width: 50%;
+  padding: 0;
+}
+.selected-answer {
+  background-color: white;
+  color: black;
+}
+.answers:hover {
+  cursor: pointer;
+}
+.active-question-no {
+  color: white;
+}
+.total-question {
+  color: gray;
+}
+.questionsGroup {
+  text-align: center;
+  font-size: 36px;
+  background-color: rgb(46, 46, 46);
+  color: white;
+}
