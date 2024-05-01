@@ -9,7 +9,6 @@ const PORT = process.env.PORT;
 // Enable CORS for all routes
 app.use(cors());
 app.use(express.json()); // Middleware to parse JSON request bodies
-app.use(express.static(path.join(__dirname, "public")));
 
 // API endpoint to fetch leaderboard data
 app.get("/api/leaderboard", (req, res) => {
@@ -57,9 +56,7 @@ app.post("/api/addscore", (req, res) => {
     }
   });
 });
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
