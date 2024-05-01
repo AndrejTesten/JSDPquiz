@@ -35,7 +35,7 @@ const Quiz = () => {
   }, []); // Empty dependency array ensures this effect runs only once
   const submitScore = async (name) => {
     try {
-      const response = await fetch(process.env.REACT_APP_BACKEND_API_URL, {
+      const response = await fetch(process.env.REACT_APP_BACKEND_API_URL_POST, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
