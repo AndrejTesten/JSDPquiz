@@ -13,7 +13,7 @@ export const quiz = {
         },
         {
           question:
-            "Fudbaler sa najviše zabeleženih nastupa u svetom dresu je:",
+            "Fudbaler sa najviše zabeleženih nastupa u crno-belom dresu je:",
           choices: [
             "Saša Ilić",
             "Momčilo Vukotić",
@@ -25,7 +25,7 @@ export const quiz = {
         },
         {
           question:
-            "Košarkaš sa najviše zabeleženih nastupa u svetom dresu je:",
+            "Košarkaš sa najviše zabeleženih nastupa u crno-belom dresu je:",
           choices: [
             "Petar Božić",
             "Predrag Danilović",
@@ -45,7 +45,7 @@ export const quiz = {
             "Sašo Filipovski",
           ],
           type: "MCQs",
-          correctAnswer: "const",
+          correctAnswer: "Željko Obradović",
         },
       ],
     },
@@ -54,29 +54,40 @@ export const quiz = {
       perQuestionScore: 7,
       questions: [
         {
-          question: "What does CSS stand for?",
+          question:
+            "Igrač sa najviše ubačenih poena na jednom meču u dresu KK Partizana je?",
           choices: [
-            "Cascading Style Sheets",
-            "Creative Style Sheets",
-            "Computer Style Sheets",
-            "Colorful Style Sheets",
+            "Miloš Bojović",
+            "Dražen Dalipagić",
+            "Dragan Kićanović",
+            "Džamar Vilson",
           ],
           type: "MCQs",
-          correctAnswer: "Cascading Style Sheets",
-          imageURL: "https://d2a3o6pzho379u.cloudfront.net/5942.jpg",
+          correctAnswer: "Miloš Bojović",
         },
         {
-          question: "Which HTML tag is used to define an internal style sheet?",
-          choices: ["<style>", "<css>", "<script>", "<html>"],
+          question:
+            "Predvođen kojim trenerom je FK Partizan učestvovao u ligi šampiona 2010. godine",
+          choices: [
+            "Lotar Mateus",
+            "Avram Grant",
+            "Aleksandar Stanojević",
+            "Miroslav Đukić",
+          ],
           type: "MCQs",
-          correctAnswer: "<style>",
-          videoURL: "https://www.youtube.com/watch?v=fCFt0dR_Dz0",
+          correctAnswer: "Aleksandar Stanojević",
         },
         {
-          question: "Which CSS property controls the text size?",
-          choices: ["font-size", "text-size", "font-style", "text-style"],
+          question:
+            "Najviše golova na jednom meču u dresu FK Partizan postigao je?",
+          choices: [
+            "Stjepan Bobek",
+            "Miloš Milutinović",
+            "Lamin Dijara",
+            "Aleksandar Mitrović",
+          ],
           type: "MCQs",
-          correctAnswer: "font-size",
+          correctAnswer: "Stjepan Bobek",
         },
       ],
     },
@@ -85,41 +96,52 @@ export const quiz = {
       perQuestionScore: 10,
       questions: [
         {
-          question: "What does HTML stand for?",
+          question:
+            "Koje godine je KK Partizan osvojio svoju prvu titulu šampiona države?",
+          choices: ["1957.", "1947.", "1976.", "1966."],
+          type: "MCQs",
+          correctAnswer: "1976.",
+        },
+        {
+          question:
+            "Protiv koje ekipe je u sezoni 2008/09 oboren rekord po broju gledalaca na jednom meču Evrolige?",
+          choices: ["Barselona", "Olimpijakos", "CSKA", "Panatinaikos"],
+          type: "MCQs",
+          correctAnswer: "Panatinaikos",
+        },
+        {
+          question: 'Kapiten "Partizanovih beba" bio je?',
           choices: [
-            "Hyperlinks and Text Markup Language",
-            "Home Tool Markup Language",
-            "Hyper Text Markup Language",
-            "Hyper Text Markup Leveler",
+            "Vladica Kovačević",
+            "Mustafa Hasanagić",
+            "Branko Rašović",
+            "Milan Galić",
           ],
           type: "MCQs",
-          correctAnswer: "Hyper Text Markup Language",
-        },
-        {
-          question: "Which HTML attribute is used to define inline styles?",
-          choices: ["class", "styles", "style", "font"],
-          type: "MCQs",
-          correctAnswer: "style",
+          correctAnswer: "Vladica Kovačević",
         },
         {
           question:
-            "Which property is used to change the left margin of an element?",
-          choices: ["margin-left", "padding-left", "indent", "text-indent"],
+            "KK Partizan je prvi košarkaški klub iz Srbije koji je odigrao zvaničnu utakmicu sa NBA timovima, protiv koje NBA ekipe je bila prva utakmica na toj turneji iz 2009. godine?",
+          choices: [
+            "Denver Nagets",
+            "Finiks Sans",
+            "Čikago Buls",
+            "Boston Seltiks",
+          ],
           type: "MCQs",
-          correctAnswer: "margin-left",
+          correctAnswer: "Denver Nagets",
         },
         {
-          question:
-            "In CSS, which property is used to change the background color of an element?",
-          choices: ["background-color", "color", "bgcolor", "background"],
+          question: "Prvi trener FK Partizan u njegovoj istoriji, bio je?",
+          choices: [
+            "Ivan Ivica Osim",
+            "Gojko Zec",
+            "Mirko Damjanović",
+            "Vladimir Vermezović",
+          ],
           type: "MCQs",
-          correctAnswer: "background-color",
-        },
-        {
-          question: "Which CSS property is used to make text bold?",
-          choices: ["font-weight", "text-style", "font-style", "bold"],
-          type: "MCQs",
-          correctAnswer: "font-weight",
+          correctAnswer: "Mirko Damjanović",
         },
       ],
     },

@@ -3,9 +3,11 @@ import React from "react";
 
 const Answer = ({ answer, index, selectedAnswerIndex, onAnswerSelected }) => {
   return (
-    <li 
+    <li
       onClick={() => onAnswerSelected(answer, index)}
-      className={selectedAnswerIndex === index ? "selected-answer" : null}
+      className={`answer-item ${
+        selectedAnswerIndex === index ? "selected-answer" : ""
+      }`}
     >
       {answer}
     </li>
