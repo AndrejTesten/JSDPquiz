@@ -7,6 +7,7 @@ import { Link, useParams } from "react-router-dom";
 
 const Quiz = () => {
   const { name } = useParams();
+  const [backendUrl, setBackendUrl] = useState("");
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
@@ -18,24 +19,32 @@ const Quiz = () => {
   });
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
 
-  const { beginner, mid, hard } = quiz.levels;
-
   useEffect(() => {
-    // Selecting questions from each level
-    const easyQuestions = beginner.questions.slice(0, 3);
-    const medQuestions = mid.questions.slice(0, 3);
-    const hardQuestions = hard.questions.slice(0, 4);
+    // Fetch backend API URL from environment variable
+    const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
 
-    // Combine all selected questions into a single array
-    const allQuestions = [...easyQuestions, ...medQuestions, ...hardQuestions];
+    setBackendUrl(apiUrl);
 
-    // Shuffle questions
-    const shuffled = allQuestions.sort(() => Math.random() - 0.5);
-    setShuffledQuestions(shuffled);
-  }, []); // Empty dependency array ensures this effect runs only once
-  const submitScore = async (name) => {
+    // Fetch shuffled questions
+    const fetchQuestions = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/questions`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch questions");
+        }
+        const data = await response.json();
+        setShuffledQuestions(data.questions);
+      } catch (error) {
+        console.error("Error fetching questions:", error);
+      }
+    };
+
+    fetchQuestions();
+  }, []);
+
+  const submitScore = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/addscore", {
+      const response = await fetch(`${backendUrl}/api/addscore`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +55,6 @@ const Quiz = () => {
         }),
       });
       if (!response.ok) {
-        console.log(name);
         throw new Error("Failed to submit score");
       }
       console.log("Score submitted successfully");
@@ -54,12 +62,11 @@ const Quiz = () => {
       console.error("Error submitting score:", error);
     }
   };
+
   const onClickNext = (isLastQuestion) => {
-    console.log("Clicked Next");
     setResult((prevResult) => {
       const isCorrect =
         selectedAnswer === shuffledQuestions[activeQuestion].correctAnswer;
-      console.log("isCorrect:", isCorrect);
       return {
         ...prevResult,
         score: isCorrect ? prevResult.score + 5 : prevResult.score,
@@ -77,23 +84,20 @@ const Quiz = () => {
 
     if (isLastQuestion) {
       // Logic to send data to the database on finish
-      submitScore(name);
+      submitScore();
       setShowResult(true);
     } else {
       setActiveQuestion((prev) => prev + 1);
-      console.log("Next Question:", activeQuestion + 1);
     }
   };
 
   const onAnswerSelected = (answer, index) => {
-    console.log("Selected Answer:", answer);
     setSelectedAnswerIndex(index);
     setSelectedAnswer(answer);
   };
 
   const { question, choices, videoURL, imageURL } =
     shuffledQuestions[activeQuestion] || {};
-  const correctAnswer = (shuffledQuestions[activeQuestion] || {}).correctAnswer;
 
   return (
     <div className="quiz">
@@ -119,25 +123,27 @@ const Quiz = () => {
               ))}
           </ul>
           <NextButton
-            onClickNext={onClickNext}
+            onClickNext={() =>
+              onClickNext(activeQuestion === shuffledQuestions.length - 1)
+            }
             isLastQuestion={activeQuestion === shuffledQuestions.length - 1}
             selectedAnswerIndex={selectedAnswerIndex}
           />
         </>
       ) : (
         <div className="result">
-          <h3>Rezultat {name}</h3>
+          <h3>Result {name}</h3>
           <p>
-            Ukupno Pitanja: <span>{shuffledQuestions.length}</span>
+            Total Questions: <span>{shuffledQuestions.length}</span>
           </p>
           <p>
-            Poeni: <span> {result.score}</span>
+            Score: <span>{result.score}</span>
           </p>
           <p>
-            Broj tačnih odgovora:<span> {result.correctAnswers}</span>
+            Correct Answers: <span>{result.correctAnswers}</span>
           </p>
           <p>
-            Broj netačnih odgovora:<span> {result.wrongAnswers}</span>
+            Wrong Answers: <span>{result.wrongAnswers}</span>
           </p>
           <ul>
             <li className="homeButton">
@@ -145,15 +151,15 @@ const Quiz = () => {
                 style={{ textDecoration: "none", color: "white" }}
                 to="/home"
               >
-                Nazad na početnu
+                Back to Home
               </Link>
             </li>
-            <li className="rezultatButton">
+            <li className="resultButton">
               <Link
                 style={{ textDecoration: "none", color: "white" }}
                 to="/leaderboard"
               >
-                Pogledaj tabelu
+                View Leaderboard
               </Link>
             </li>
           </ul>
