@@ -21,7 +21,7 @@ app.get("/api/leaderboard", (req, res) => {
   pool.query(query, (err, result) => {
     if (err) {
       console.error("Error executing query:", err.stack);
-      res.status(500).json({ error: "Error fetching leaderboard data" });
+      res.status(500).json({ error: err.message });
     } else {
       res.json(result.rows);
     }
