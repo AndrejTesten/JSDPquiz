@@ -126,20 +126,18 @@ const Quiz = () => {
         </>
       ) : (
         <div className="result">
-          <h3>Rezultat {name}</h3>
-          <p>
-            Ukupno Pitanja: <span>{shuffledQuestions.length}</span>
-          </p>
+          <h3>Rezultat</h3>
           <p>
             Poeni: <span> {result.score}</span>
           </p>
           <p>
-            Broj tačnih odgovora:<span> {result.correctAnswers}</span>
+            Tačni odgovori:<span> {result.correctAnswers}</span>
           </p>
           <p>
-            Broj netačnih odgovora:<span> {result.wrongAnswers}</span>
+            Netačni odgovori:<span> {result.wrongAnswers}</span>
           </p>
-          <ul>
+          <ul></ul>
+          <div className="meni">
             <li className="homeButton">
               <Link style={{ textDecoration: "none", color: "white" }} to="/">
                 Nazad na početnu
@@ -153,7 +151,7 @@ const Quiz = () => {
                 Pogledaj tabelu
               </Link>
             </li>
-          </ul>
+          </div>
         </div>
       )}
     </div>

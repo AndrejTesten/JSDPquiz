@@ -17,14 +17,24 @@ const HomePage = () => {
   return (
     <div className="pozadina">
       <div className="container">
-        <div className="uputstvo">
-          <p>
-            Kviz sadrzi 150 pitanja podeljena u tri grupacije, svaki korisnik
-            dobija random 3 pitanja iz grupe lako i srednje, kao i 4 pitanja iz
-            grupacije "teska pitanja", jer je zivot navijača Partizana težak i
-            sve drugačije bi bilo pogrešno
-          </p>
-        </div>
+        <h2>JSDP KVIZ</h2>
+        <ul className="uputstvo">
+          <li>Pre početka unesite ime</li>
+          <li>U bazi trenutno postoji 150 pitanja</li>
+          <li>Pitanja su podeljena u 3 grupe</li>
+          <li>
+            Svaki igrač dobija 3 nasumično generisana laka pitanja, 3 pitanja
+            srednje težine i 4 teška pitanja
+          </li>
+          <li>Za tačan odgovor na lako pitanje korisnik dobija 5 poena</li>
+          <li>
+            Za tačan odgovor na pitanje srednje težine korisnik dobija 10 poena
+          </li>
+          <li>Za tačan odgovor na teško pitanje korisnik dobija 15 poena</li>
+          <li>Na kraju igre, vaš rezultat će se automatski uneti u tabelu</li>
+          <li>Tabela prikazuje TOP 50 igrača za današnji dan</li>
+          <li>Srećno!</li>
+        </ul>
         <div className="unesiIme">
           <form action="">
             <label htmlFor="">

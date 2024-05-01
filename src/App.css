@@ -34,7 +34,7 @@
   justify-content: space-between;
   align-items: center;
   width: 50%;
-  height: 50%;
+  height: 80%;
   margin: auto;
   color: white;
   padding: 50px;
@@ -49,9 +49,8 @@ label {
   font-size: 20px;
 }
 .uputstvo {
-  width: 80%;
-  margin-bottom: 20px;
-  font-size: 18px;
+  width: 90%;
+  font-size: 15px;
 }
 .menu ul {
   list-style: none;
@@ -216,4 +215,329 @@ button:hover {
 }
 .dugmeTabela > .homeButton {
   margin: 0;
+}
+/**
+ * Basic CSS Media Query Template
+ * TODO: I should probably use Sass...
+ * Author: Michael Vieth
+ * ------------------------------------------
+ *  Responsive Grid Media Queries - 1280, 1024, 768, 480
+ *   1280-1024   - desktop (default grid)
+ *   1024-768    - tablet landscape
+ *   768-480     - tablet 
+ *   480-less    - phone landscape & smaller
+ * --------------------------------------------
+ */
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  /*question*/
+  .question {
+    font-size: 15px;
+  }
+  .answers {
+    font-size: 20px;
+    width: 50%;
+    line-height: 80px;
+  }
+  .questionsGroup {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+  button {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  /*HomePage*/
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+    margin: auto;
+    color: white;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  input {
+    font-size: 18px;
+    padding-left: 10px;
+    margin-left: 10px;
+  }
+  label {
+    display: flex;
+    font-size: 18px;
+  }
+  .container h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  .uputstvo {
+    width: 90%;
+    font-size: 12px;
+  }
+
+  .startButton {
+    font-size: 12px;
+    background-color: green;
+    padding: 10px;
+    width: 100px;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tabelaButton {
+    background-color: rgb(0, 4, 58);
+    padding: 10px;
+    margin-top: 20px;
+    width: 100px;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  /* Quiz part */
+  .question {
+    font-size: 15px;
+  }
+  .answers {
+    font-size: 20px;
+    width: 50%;
+    line-height: 80px;
+  }
+  .questionsGroup {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+  button {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+  }
+  /*Tabela*/
+  .rezultat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 50%;
+    height: 70%;
+    margin-top: 40%;
+    font-size: 18px;
+  }
+  .rezultatLista {
+    line-height: 200%;
+  }
+  .dugmeTabela {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 0;
+  }
+  .dugmeTabela > .homeButton {
+    margin: 0;
+  }
+
+  .rezultatButton {
+    background-color: rgb(0, 4, 58);
+    padding: 12px;
+    width: 140px;
+    font-size: 14px;
+    border-radius: 5%;
+  }
+
+  .homeButton {
+    background-color: rgb(0, 95, 0);
+    padding: 12px;
+    width: 140px;
+    font-size: 14px;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  /*HomePage*/
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+    margin: auto;
+    color: white;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  input {
+    font-size: 18px;
+    padding-left: 10px;
+    margin-left: 10px;
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+  }
+  .container h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  .uputstvo {
+    width: 90%;
+    font-size: 12px;
+  }
+
+  .startButton {
+    font-size: 12px;
+    background-color: green;
+    padding: 10px;
+    width: 100px;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tabelaButton {
+    background-color: rgb(0, 4, 58);
+    padding: 10px;
+    margin-top: 20px;
+    width: 100px;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+  }
+  /*Quiz*/
+  .question {
+    font-size: 15px;
+  }
+  .answers {
+    font-size: 15px;
+    width: 50%;
+    line-height: 60px;
+  }
+  .questionsGroup {
+    font-size: 25px;
+    margin-top: 40%;
+  }
+  button {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+  }
+  /*Result*/
+  .result {
+    margin-top: 40%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    font-size: 15px;
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rezultatButton {
+    background-color: rgb(0, 4, 58);
+    padding: 10px;
+    width: 120px;
+    font-size: 12px;
+    border-radius: 5%;
+  }
+
+  .homeButton {
+    background-color: rgb(0, 95, 0);
+    padding: 10px;
+    width: 120px;
+    font-size: 12px;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  /*Tabela*/
+  .rezultat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 50%;
+    height: 70%;
+    margin-top: 40%;
+    font-size: 18px;
+  }
+  .rezultatLista {
+    line-height: 200%;
+  }
+  .dugmeTabela {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 0;
+  }
+  .dugmeTabela > .homeButton {
+    margin: 0;
+  }
+}
+
+/* Portrait */
+@media screen and (orientation: portrait) {
+  /* Portrait styles here */
+}
+/* Landscape */
+@media screen and (orientation: landscape) {
+  /* Landscape styles here */
+}
+
+/* CSS for iPhone, iPad, and Retina Displays */
+
+/* Non-Retina */
+@media screen and (-webkit-max-device-pixel-ratio: 1) {
+}
+
+/* Retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min--moz-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
+}
+
+/* iPhone Portrait */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+}
+
+/* iPhone Landscape */
+@media screen and (max-device-width: 480px) and (orientation: landscape) {
+}
+
+/* iPad Portrait */
+@media screen and (min-device-width: 481px) and (orientation: portrait) {
+}
+
+/* iPad Landscape */
+@media screen and (min-device-width: 481px) and (orientation: landscape) {
 }
