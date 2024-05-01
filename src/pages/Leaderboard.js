@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Leaderboard = () => {
-  
   const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {
@@ -12,17 +11,32 @@ const Leaderboard = () => {
       .catch((error) => console.error("Error fetching leaderboard:", error));
   }, []);
 
+  const chunkArray = (arr, chunkSize) => {
+    const chunks = [];
+    for (let i = 0; i < arr.length; i += chunkSize) {
+      chunks.push(arr.slice(i, i + chunkSize));
+    }
+    return chunks;
+  };
+
+  const slicedLeaderboard = leaderboard.slice(0, 50); // Get the first 50 iterations
+  const leaderboardChunks = chunkArray(slicedLeaderboard, 10); // Split into chunks of 10
+
   return (
     <div className="leaderboard">
       <div className="rezultat">
         <h2 className="rezultatNaslov">Tabela</h2>
-        <ol className="rezultatLista">
-          {leaderboard.map((player, index) => (
-            <li className="rezultatIgrac" key={index}>
-              {player.playerName} - {player.playerScore}
-            </li>
+        <div className="rezultatListaContainer">
+          {leaderboardChunks.map((chunk, index) => (
+            <ol className="rezultatLista" key={index}>
+              {chunk.map((player, idx) => (
+                <li className="rezultatIgrac" key={idx}>
+                  {player.playerName} - {player.playerScore}
+                </li>
+              ))}
+            </ol>
           ))}
-        </ol>
+        </div>
         <ul className="dugmeTabela">
           <li className="homeButton">
             <Link style={{ textDecoration: "none", color: "white" }} to="/">

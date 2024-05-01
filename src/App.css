@@ -28,6 +28,7 @@
   background-position: center;
   background-size: cover;
   display: flex;
+  animation: fade-in 1s;
 }
 .container {
   display: flex;
@@ -54,7 +55,7 @@ label {
   gap: 3px;
   width: 70%;
   height: 50%;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 .menu ul {
   list-style: none;
@@ -91,14 +92,23 @@ label {
   background-position: center;
   background-size: cover;
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  animation: fade-in 0.7s;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
 }
 .image-container img {
-  width: 150px;
-  height: 200px;
+  width: 300px;
+  height: 180px;
 }
 
 .question {
@@ -112,12 +122,13 @@ label {
 .answers {
   text-align: center;
   list-style: none;
-  font-size: 30px;
-  line-height: 100px;
+  font-size: 20px;
+  line-height: 220%;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   width: 50%;
   padding: 0;
+  animation: slide-right 2.5s;
 }
 .selected-answer {
   background-color: white;
@@ -138,6 +149,15 @@ label {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   width: 50%;
+  animation: slide-right 2s;
+}
+@keyframes slide-right {
+  from {
+    margin-right: 100%;
+  }
+  to {
+    margin-right: 0%;
+  }
 }
 button {
   width: 150px;
@@ -162,6 +182,7 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: slide-right 1s;
 }
 .rezultatButton:hover {
   background-color: rgb(0, 2, 27);
@@ -197,6 +218,7 @@ button:hover {
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
   padding-top: 10%;
+  animation: fade-in 2s;
 }
 .rezultat {
   display: flex;
@@ -241,7 +263,7 @@ button:hover {
 @media all and (min-width: 768px) and (max-width: 1024px) {
   /*question*/
   .uputstvo {
-    font-size: 10px;
+    font-size: 14px;
   }
   label,
   input {
@@ -253,13 +275,13 @@ button:hover {
     padding: 9px;
     width: 80px;
   }
+  /*Quiz*/
   .question {
-    font-size: 15px;
+    font-size: 17px;
   }
   .answers {
-    font-size: 20px;
-    width: 50%;
-    line-height: 80px;
+    line-height: 200%;
+    font-size: 17px;
   }
   .questionsGroup {
     font-size: 30px;
@@ -274,7 +296,7 @@ button:hover {
 
 @media all and (min-width: 480px) and (max-width: 768px) {
   .uputstvo {
-    font-size: 9px;
+    font-size: 12px;
   }
   .uputstvo-naslov {
     font-size: 13px;
@@ -296,9 +318,8 @@ button:hover {
     font-size: 15px;
   }
   .answers {
-    font-size: 20px;
-    width: 50%;
-    line-height: 80px;
+    line-height: 180%;
+    font-size: 15px;
   }
   .questionsGroup {
     font-size: 30px;
@@ -309,17 +330,14 @@ button:hover {
     height: 40px;
     font-size: 15px;
   }
+  .image-container img {
+    width: 150px;
+    height: 150px;
+  }
   /*Tabela*/
   .rezultat {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8);
     width: 50%;
     height: 70%;
-    margin-top: 40%;
     font-size: 18px;
   }
   .rezultatLista {
@@ -362,7 +380,7 @@ button:hover {
     font-size: 18px;
   }
   .uputstvo {
-    font-size: 9px;
+    font-size: 10px;
   }
   .uputstvo-naslov {
     font-size: 13px;
@@ -381,21 +399,24 @@ button:hover {
   }
   /*Quiz*/
   .question {
-    font-size: 15px;
+    font-size: 17px;
   }
   .answers {
-    font-size: 15px;
-    width: 50%;
-    line-height: 60px;
+    line-height: 190%;
+    font-size: 17px;
   }
   .questionsGroup {
-    font-size: 25px;
-    margin-top: 40%;
+    font-size: 30px;
+    margin-top: 30px;
   }
   button {
     width: 100px;
     height: 40px;
     font-size: 15px;
+  }
+  .image-container img {
+    width: 100px;
+    height: 100px;
   }
   /*Result*/
   .result {
@@ -439,7 +460,6 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.8);
     width: 50%;
     height: 70%;
-    margin-top: 40%;
     font-size: 18px;
   }
   .rezultatLista {

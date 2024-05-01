@@ -6,7 +6,6 @@ import NextButton from "../components/NextButton";
 import { Link, useParams } from "react-router-dom";
 
 const Quiz = () => {
-  
   const { name } = useParams();
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
@@ -56,14 +55,23 @@ const Quiz = () => {
     }
   };
   const onClickNext = (isLastQuestion) => {
-    console.log("Clicked Next");
+    let perQuestionScore = 5; // Default per question score
+
+    // Determine the per question score based on the difficulty level of the current question
+    if (activeQuestion < beginner.totalQuestions) {
+      perQuestionScore = beginner.perQuestionScore;
+    } else if (activeQuestion < beginner.totalQuestions + mid.totalQuestions) {
+      perQuestionScore = mid.perQuestionScore;
+    } else {
+      perQuestionScore = hard.perQuestionScore;
+    }
     setResult((prevResult) => {
       const isCorrect =
         selectedAnswer === shuffledQuestions[activeQuestion].correctAnswer;
       console.log("isCorrect:", isCorrect);
       return {
         ...prevResult,
-        score: isCorrect ? prevResult.score + 5 : prevResult.score,
+        score: isCorrect ? prevResult.score + perQuestionScore : prevResult.score,
         correctAnswers: isCorrect
           ? prevResult.correctAnswers + 1
           : prevResult.correctAnswers,

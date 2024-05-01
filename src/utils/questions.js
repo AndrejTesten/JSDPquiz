@@ -12,6 +12,90 @@ export const quiz = {
           correctAnswer: "1945.",
         },
         {
+          question: "Ko je na slici?",
+          choices: [
+            "Ivica Iliev",
+            "Vuk Rašović",
+            "Miroslav Đukić",
+            "Aleksandar Stanojević",
+          ],
+          type: "MCQs",
+          correctAnswer: "Vuk Rašović",
+          imageURL:
+            "https://sportal.blic.rs/storage/images/2023/06/03/11:47:48_2023060311473528124_original_abb-l.jpeg",
+        },
+        {
+          question: "Ko je na slici?",
+          choices: [
+            "Amida Brajma",
+            "Samardo Semjuels",
+            "Nejtan Džavai",
+            "Slavko Vraneš",
+          ],
+          type: "MCQs",
+          correctAnswer: "Nejtan Džavai",
+          imageURL:
+            "https://content.api.news/v3/images/bin/48f07cd0862efbcf97876bcd63f0bec4",
+        },
+        {
+          question: "Ko je na slici?",
+          choices: [
+            "Erik Mika",
+            "Aleks Marić",
+            "Džok Lendejl",
+            "Džejms Mekadu",
+          ],
+          type: "MCQs",
+          correctAnswer: "Džok Lendejl",
+          imageURL:
+            "https://ompsports.com.au/wp-content/uploads/2019/02/Jock-11.jpg",
+        },
+        {
+          question: "Ko je na slici?",
+          choices: [
+            "Lester Bo Mekejleb",
+            "Patrik Miler",
+            "Ejsi Lo",
+            "Dominik Džejms",
+          ],
+          type: "MCQs",
+          correctAnswer: "Lester Bo Mekejleb",
+          imageURL:
+            "https://cdn3.mozzartsport.com/upload/825x464/News/Image/2020_05/1588797012958_20100330mmMekkej12%20Cropped.jpg",
+        },
+        {
+          question: "Ko je na slici?",
+          choices: [
+            "Saša Marković",
+            "Darko Brašanac",
+            "Goran Lovre",
+            "Mladen Krstajić",
+          ],
+          type: "MCQs",
+          correctAnswer: "Goran Lovre",
+          imageURL:
+            "https://www.kurir.rs/data/images/2012/10/28/02/224063_3701sasa-pavlic_ls.jpg",
+        },
+        {
+          question: "Ko je na slici?",
+          choices: [
+            "Medo Kamara",
+            "Princ Tejgo",
+            "Almami Moreira",
+            "Erik Đemba Đemba",
+          ],
+          type: "MCQs",
+          correctAnswer: "Erik Đemba Đemba",
+          imageURL:
+            "https://nova.rs/wp-content/uploads/2022/04/23/1650703001-PARTIZAN-LUDOGOREC_112-750x520.jpg",
+        },
+        {
+          question: "Koje godine je osnovan JSD Partizan?",
+          choices: ["1941.", "1945.", "1970.", "Ništa od ponuđenog"],
+          type: "MCQs",
+          correctAnswer: "1945.",
+        },
+        {
           question:
             "Fudbaler sa najviše zabeleženih nastupa u crno-belom dresu je:",
           choices: [

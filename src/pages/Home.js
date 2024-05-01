@@ -44,9 +44,9 @@ const HomePage = () => {
           </li>
           <li>Za tačan odgovor na lako pitanje korisnik dobija 5 poena</li>
           <li>
-            Za tačan odgovor na pitanje srednje težine korisnik dobija 10 poena
+            Za tačan odgovor na pitanje srednje težine korisnik dobija 7 poena
           </li>
-          <li>Za tačan odgovor na teško pitanje korisnik dobija 15 poena</li>
+          <li>Za tačan odgovor na teško pitanje korisnik dobija 10 poena</li>
           <li>Na kraju igre, vaš rezultat će se automatski uneti u tabelu</li>
           <li>Tabela prikazuje TOP 50 igrača za današnji dan</li>
           <li>Srećno!</li>
