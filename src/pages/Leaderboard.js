@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Leaderboard from "./Leaderboard";
 
 const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
