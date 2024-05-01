@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import withSplashScreen from "./../components/withSplashScreen";
 const HomePage = () => {
+  useEffect(() => {
+    const setHeight = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    setHeight(); // Call the function initially
+
+    // Add event listener to recalculate height when window is resized
+    window.addEventListener("resize", setHeight);
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", setHeight);
+    };
+  }, []);
   const [name, setName] = useState("");
 
   const handleNameChange = (event) => {
@@ -17,7 +33,7 @@ const HomePage = () => {
   return (
     <div className="pozadina">
       <div className="container">
-        <h2>JSDP KVIZ</h2>
+        <h2 className="uputstvo-naslov">JSDP KVIZ</h2>
         <ul className="uputstvo">
           <li>Pre početka unesite ime</li>
           <li>U bazi trenutno postoji 150 pitanja</li>

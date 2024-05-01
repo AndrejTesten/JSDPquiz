@@ -6,6 +6,7 @@ import NextButton from "../components/NextButton";
 import { Link, useParams } from "react-router-dom";
 
 const Quiz = () => {
+  
   const { name } = useParams();
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");

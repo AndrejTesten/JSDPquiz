@@ -21,7 +21,8 @@
 }
 /*HomePage*/
 .pozadina {
-  height: 100dvh;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url("./images/bgstd.jpg");
   background-position: center;
@@ -33,35 +34,42 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
-  height: 80%;
+  width: 90%;
+  height: auto;
   margin: auto;
   color: white;
-  padding: 50px;
   background-color: rgba(0, 0, 0, 0.8);
 }
 input {
-  font-size: 20px;
+  font-size: 1.2rem;
   padding-left: 10px;
   margin-left: 20px;
 }
 label {
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 .uputstvo {
-  width: 90%;
-  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 70%;
+  height: 50%;
+  font-size: 1rem;
 }
 .menu ul {
   list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
 }
 .startButton {
   background-color: green;
+}
+.startButton,
+.tabelaButton {
   padding: 15px;
-  width: 150px;
+  width: 60%;
   border-radius: 5%;
-  display: flex;
-  justify-content: center;
 }
 .startButton:hover,
 .tabelaButton:hover {
@@ -75,12 +83,6 @@ label {
 }
 .tabelaButton {
   background-color: rgb(0, 4, 58);
-  padding: 15px;
-  margin-top: 20px;
-  width: 150px;
-  border-radius: 5%;
-  display: flex;
-  justify-content: center;
 }
 /* Quiz part */
 .quiz {
@@ -88,7 +90,8 @@ label {
     url("./images/pozadinakviz.jpg");
   background-position: center;
   background-size: cover;
-  height: 100dvh;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -191,7 +194,8 @@ button:hover {
     url("./images/stadion.jpg");
   background-position: center;
   background-size: cover;
-  height: 100dvh;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
   padding-top: 10%;
 }
 .rezultat {
@@ -236,6 +240,19 @@ button:hover {
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
   /*question*/
+  .uputstvo {
+    font-size: 10px;
+  }
+  label,
+  input {
+    font-size: 12px;
+  }
+  .startButton,
+  .tabelaButton {
+    font-size: 10px;
+    padding: 9px;
+    width: 80px;
+  }
   .question {
     font-size: 15px;
   }
@@ -256,59 +273,24 @@ button:hover {
 }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
-  /*HomePage*/
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
-    height: 80%;
-    margin: auto;
-    color: white;
-    padding: 50px;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  input {
-    font-size: 18px;
-    padding-left: 10px;
-    margin-left: 10px;
-  }
-  label {
-    display: flex;
-    font-size: 18px;
-  }
-  .container h2 {
-    font-size: 18px;
-    margin-bottom: 0;
-  }
   .uputstvo {
-    width: 90%;
-    font-size: 12px;
+    font-size: 9px;
   }
-
-  .startButton {
-    font-size: 12px;
-    background-color: green;
-    padding: 10px;
-    width: 100px;
-    border-radius: 5%;
-    display: flex;
-    justify-content: center;
+  .uputstvo-naslov {
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
   }
-
+  label,
+  input {
+    font-size: 10px;
+  }
+  .startButton,
   .tabelaButton {
-    background-color: rgb(0, 4, 58);
-    padding: 10px;
-    margin-top: 20px;
-    width: 100px;
-    border-radius: 5%;
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
+    font-size: 9px;
+    padding: 6px;
+    width: 80px;
   }
-
   /* Quiz part */
   .question {
     font-size: 15px;
@@ -379,59 +361,23 @@ button:hover {
     color: white;
     font-size: 18px;
   }
-  /*HomePage*/
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
-    height: 80%;
-    margin: auto;
-    color: white;
-    padding: 50px;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  input {
-    font-size: 18px;
-    padding-left: 10px;
-    margin-left: 10px;
-  }
-  label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 18px;
-  }
-  .container h2 {
-    font-size: 18px;
-    margin-bottom: 0;
-  }
   .uputstvo {
-    width: 90%;
-    font-size: 12px;
+    font-size: 9px;
   }
-
-  .startButton {
-    font-size: 12px;
-    background-color: green;
-    padding: 10px;
-    width: 100px;
-    border-radius: 5%;
-    display: flex;
-    justify-content: center;
+  .uputstvo-naslov {
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
   }
-
+  label,
+  input {
+    font-size: 10px;
+  }
+  .startButton,
   .tabelaButton {
-    background-color: rgb(0, 4, 58);
-    padding: 10px;
-    margin-top: 20px;
-    width: 100px;
-    border-radius: 5%;
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
+    font-size: 9px;
+    padding: 6px;
+    width: 80px;
   }
   /*Quiz*/
   .question {
