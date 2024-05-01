@@ -35,8 +35,6 @@ const HomePage = () => {
       <div className="container">
         <h2 className="uputstvo-naslov">JSDP KVIZ</h2>
         <ul className="uputstvo">
-          <li>Pre početka unesite ime</li>
-          <li>U bazi trenutno postoji 150 pitanja</li>
           <li>Pitanja su podeljena u 3 grupe</li>
           <li>
             Svaki igrač dobija 3 nasumično generisana laka pitanja, 3 pitanja
@@ -48,7 +46,6 @@ const HomePage = () => {
           </li>
           <li>Za tačan odgovor na teško pitanje korisnik dobija 10 poena</li>
           <li>Na kraju igre, vaš rezultat će se automatski uneti u tabelu</li>
-          <li>Tabela prikazuje TOP 50 igrača za današnji dan</li>
           <li>Srećno!</li>
         </ul>
         <div className="unesiIme">

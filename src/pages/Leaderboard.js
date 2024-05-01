@@ -27,6 +27,26 @@ const Leaderboard = () => {
       <div className="rezultat">
         <h2 className="rezultatNaslov">Tabela</h2>
         <div className="rezultatListaContainer">
+          <ol className="rezultatLista">
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+            <li>Andrej 10</li>
+          </ol>
           {leaderboardChunks.map((chunk, index) => (
             <ol className="rezultatLista" key={index}>
               {chunk.map((player, idx) => (
