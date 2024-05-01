@@ -3,8 +3,10 @@ import { quiz } from "../utils/questions.js";
 import Answer from "../components/Answer";
 import Question from "../components/Question";
 import NextButton from "../components/NextButton";
+import { Link, useParams } from "react-router-dom";
 
 const Quiz = () => {
+  const { name } = useParams();
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
@@ -31,8 +33,28 @@ const Quiz = () => {
     const shuffled = allQuestions.sort(() => Math.random() - 0.5);
     setShuffledQuestions(shuffled);
   }, []); // Empty dependency array ensures this effect runs only once
-
-  const onClickNext = () => {
+  const submitScore = async (name) => {
+    try {
+      const response = await fetch("http://localhost:3001/api/addscore", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          playerName: name,
+          playerScore: result.score,
+        }),
+      });
+      if (!response.ok) {
+        console.log(name);
+        throw new Error("Failed to submit score");
+      }
+      console.log("Score submitted successfully");
+    } catch (error) {
+      console.error("Error submitting score:", error);
+    }
+  };
+  const onClickNext = (isLastQuestion) => {
     console.log("Clicked Next");
     setResult((prevResult) => {
       const isCorrect =
@@ -53,11 +75,13 @@ const Quiz = () => {
     setSelectedAnswer("");
     setSelectedAnswerIndex(null);
 
-    if (activeQuestion !== shuffledQuestions.length - 1) {
+    if (isLastQuestion) {
+      // Logic to send data to the database on finish
+      submitScore(name);
+      setShowResult(true);
+    } else {
       setActiveQuestion((prev) => prev + 1);
       console.log("Next Question:", activeQuestion + 1);
-    } else {
-      setShowResult(true);
     }
   };
 
@@ -102,7 +126,7 @@ const Quiz = () => {
         </>
       ) : (
         <div className="result">
-          <h3>Result</h3>
+          <h3>Rezultat {name}</h3>
           <p>
             Ukupno Pitanja: <span>{shuffledQuestions.length}</span>
           </p>
@@ -115,6 +139,24 @@ const Quiz = () => {
           <p>
             Broj netačnih odgovora:<span> {result.wrongAnswers}</span>
           </p>
+          <ul>
+            <li className="homeButton">
+              <Link
+                style={{ textDecoration: "none", color: "white" }}
+                to="/home"
+              >
+                Nazad na početnu
+              </Link>
+            </li>
+            <li className="rezultatButton">
+              <Link
+                style={{ textDecoration: "none", color: "white" }}
+                to="/leaderboard"
+              >
+                Pogledaj tabelu
+              </Link>
+            </li>
+          </ul>
         </div>
       )}
     </div>

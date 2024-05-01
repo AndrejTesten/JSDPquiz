@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
-export default function HomePage() {
+import withSplashScreen from "./../components/withSplashScreen";
+const HomePage = () => {
   const [name, setName] = useState("");
 
   const handleNameChange = (event) => {
@@ -44,7 +44,7 @@ export default function HomePage() {
           <ul>
             <li className="startButton">
               <Link
-                to={name.trim() !== "" ? "/quiz" : ""}
+                to={name.trim() !== "" ? `/quiz/${name}` : ""}
                 onClick={handleStartQuiz}
                 style={{
                   textDecoration: "none",
@@ -56,7 +56,10 @@ export default function HomePage() {
               </Link>
             </li>
             <li className="tabelaButton">
-              <Link style={{ textDecoration: "none", color: "white" }} to="">
+              <Link
+                style={{ textDecoration: "none", color: "white" }}
+                to="/leaderboard"
+              >
                 Pogledaj tabelu
               </Link>
             </li>
@@ -65,4 +68,5 @@ export default function HomePage() {
       </div>
     </div>
   );
-}
+};
+export default withSplashScreen(HomePage);

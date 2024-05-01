@@ -84,21 +84,19 @@ label {
   justify-content: center;
 }
 /* Quiz part */
-body {
+.quiz {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url("./images/pozadinakviz.jpg");
   background-position: center;
   background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .image-container img {
   width: 150px;
   height: 200px;
-}
-.quiz {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
 }
 
 .question {
@@ -150,8 +148,72 @@ button:hover {
 }
 /* Result section */
 .result {
+  margin-top: 100px;
   background-color: rgba(255, 255, 255, 0.8);
   color: black;
   font-size: 30px;
   padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rezultatButton:hover {
+  background-color: rgb(0, 2, 27);
+}
+.rezultatButton {
+  background-color: rgb(0, 4, 58);
+  padding: 15px;
+  width: 250px;
+  font-size: 20px;
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
+}
+.homeButton:hover {
+  background-color: rgb(0, 58, 0);
+}
+.homeButton {
+  background-color: rgb(0, 95, 0);
+  padding: 15px;
+  width: 250px;
+  font-size: 20px;
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+/*Rezultati*/
+.leaderboard {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("./images/stadion.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  padding-top: 10%;
+}
+.rezultat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  font-size: 30px;
+}
+.rezultatLista {
+  line-height: 200%;
+}
+.dugmeTabela {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+.dugmeTabela > .homeButton {
+  margin: 0;
 }
