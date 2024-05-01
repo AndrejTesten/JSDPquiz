@@ -141,10 +141,7 @@ const Quiz = () => {
           </p>
           <ul>
             <li className="homeButton">
-              <Link
-                style={{ textDecoration: "none", color: "white" }}
-                to="/home"
-              >
+              <Link style={{ textDecoration: "none", color: "white" }} to="/">
                 Nazad na početnu
               </Link>
             </li>

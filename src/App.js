@@ -7,8 +7,8 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/home" element={<HomePage />} />
+      <Routes basename="/home">
+        <Route path="/" element={<HomePage />} />
         <Route path="/quiz/:name" element={<Quiz />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>

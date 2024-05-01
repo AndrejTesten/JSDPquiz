@@ -3,7 +3,7 @@ const cors = require("cors"); // Import cors module
 const pool = require("./db"); // Import db.js
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
 // Enable CORS for all routes
 app.use(cors());

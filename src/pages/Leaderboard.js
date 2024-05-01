@@ -5,7 +5,7 @@ const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/leaderboard")
+    fetch(process.env.REACT_APP_BACKEND_API_URL)
       .then((res) => res.json())
       .then((data) => setLeaderboard(data))
       .catch((error) => console.error("Error fetching leaderboard:", error));
@@ -24,7 +24,7 @@ const Leaderboard = () => {
         </ol>
         <ul className="dugmeTabela">
           <li className="homeButton">
-            <Link style={{ textDecoration: "none", color: "white" }} to="/home">
+            <Link style={{ textDecoration: "none", color: "white" }} to="/">
               Nazad na početnu
             </Link>
           </li>
